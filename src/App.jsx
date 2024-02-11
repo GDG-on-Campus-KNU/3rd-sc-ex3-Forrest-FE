@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router-dom';
 
-import ErrorPage from './pages/Error';
-import MainPage from './pages/Main';
-import MapPage from './pages/Map';
-import RootLayout from './pages/Roots';
+import ErrorPage from './pages/ErrorPage';
+import MainPage from './pages/MainPage';
+import MapPage from './pages/MapPage';
+import RootLayout from './pages/RootLayout';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, path: '', element: <MainPage /> },
-      { path: 'map', elements: <MapPage /> },
+      { path: 'map', element: <MapPage /> },
     ],
   },
 ]);

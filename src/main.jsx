@@ -1,9 +1,9 @@
-import { ThemeProvider } from '@mui/material';
-
 import ReactDOM from 'react-dom/client';
 
 import App from './App.jsx';
-import theme from './styles/Theme.jsx';
+import './index.css';
+import theme from './styles/Theme';
+import { ThemeProvider } from '@mui/material';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
