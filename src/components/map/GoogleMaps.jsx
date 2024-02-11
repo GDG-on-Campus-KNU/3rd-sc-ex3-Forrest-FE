@@ -1,8 +1,11 @@
-import { Google_API_Key } from '../../constants/Url';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { useEffect } from 'react';
+
 import { setMarkers } from '../../hooks/custom-hook/useMapMarkers';
 
-import { useEffect } from 'react';
+import { Google_API_Key } from '../../constants/Url';
+
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+
 import { useMapStore } from '../../store/useMapStore';
 
 const containerStyle = {
