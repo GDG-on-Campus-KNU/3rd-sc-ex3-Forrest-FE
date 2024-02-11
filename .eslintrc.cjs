@@ -6,12 +6,12 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended', // 추가
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'], // 'prettier' 플러그인 제거
+  plugins: ['react-refresh'],
   rules: {
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [
@@ -23,7 +23,7 @@ module.exports = {
     {
       files: ['*.js', '*.jsx'],
       rules: {
-        'prettier/prettier': 'error', // 추가
+        'prettier/prettier': 'error',
       },
     },
   ],
