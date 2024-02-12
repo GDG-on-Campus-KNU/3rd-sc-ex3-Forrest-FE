@@ -1,6 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { RouterProvider } from 'react-router-dom';
 
+import { GlobalStyle } from './styles/GlobalStyle';
+import { Global } from '@emotion/react';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 import ErrorPage from './pages/ErrorPage';
 import MainPage from './pages/MainPage';
 import MapPage from './pages/MapPage';
@@ -21,6 +28,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
+      <Global styles={GlobalStyle} />
       <RouterProvider router={router} />
     </>
   );
