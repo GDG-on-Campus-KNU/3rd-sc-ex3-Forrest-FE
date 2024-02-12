@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import SideBar from './SideBar';
+
 import { setMarkers } from '../../hooks/custom-hook/useMapMarkers';
 
 import { Google_API_Key } from '../../constants/Url';
@@ -19,7 +21,8 @@ const center = {
 };
 
 const GoogleMaps = () => {
-  const { isLoaded, setLoaded } = useMapStore();
+  const { isLoaded, setLoaded, isSideBarOpen, setIsSideBarOpen } =
+    useMapStore();
 
   const { isLoaded: gMapLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -32,13 +35,22 @@ const GoogleMaps = () => {
     }
   }, [gMapLoaded, setLoaded]);
 
+  const handleMarkerClick = () => {
+    setTimeout(() => {
+      setIsSideBarOpen((prevState) => !prevState);
+    }, 800);
+  };
+
   return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={2.8}
-      onLoad={(map) => setMarkers(map)}
-    />
+    <>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={2.8}
+        onLoad={(map) => setMarkers(map, handleMarkerClick)}
+      />
+      <SideBar isOpen={isSideBarOpen} onClose={() => setIsSideBarOpen(false)} />
+    </>
   ) : (
     <>Something goes wrong!</>
   );

@@ -13,6 +13,7 @@ export const FlexWrapper = styled.div`
 `;
 
 export const SideContainer = styled.div`
+  height: 100vh;
   display: flex;
   flex-direction: row;
 `;

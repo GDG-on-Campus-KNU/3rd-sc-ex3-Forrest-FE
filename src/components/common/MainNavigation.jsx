@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { FlexWrapper } from '../../styles/Layout';
@@ -12,8 +11,10 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { styled } from '@mui/system';
 
+import { useMapStore } from '../../store/useMapStore';
 import { useRouterStore } from '../../store/useRouterStore';
 
+// eslint-disable-next-line no-unused-vars
 const ColoredIcon = styled(({ icon: Icon, isClicked, ...rest }) => (
   <Icon {...rest} />
 ))(({ theme, isClicked }) => ({
@@ -29,25 +30,36 @@ const MainNavigation = () => {
     setIsWar1Clicked,
     setIsWar2Clicked,
   } = useRouterStore();
+  const { setIsSideBarOpen } = useMapStore();
   const navigate = useNavigate();
 
   const handleWar1Click = () => {
+    setIsSideBarOpen(false);
     setIsWar1Clicked();
     navigate('/map');
   };
 
   const handleWar2Click = () => {
+    setIsSideBarOpen(false);
     setIsWar2Clicked();
     navigate('/map');
   };
 
   return (
-    <Box sx={{ width: 60, height: '100%', bgcolor: 'background.paper' }}>
+    <Box
+      sx={{
+        width: 60,
+        height: '100%',
+        bgcolor: 'background.paper',
+        boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 2px 0px',
+      }}
+    >
       <nav aria-label='main mailbox folders'>
         <List disablePadding>
           <ListItem disablePadding>
             <ListItemButton
               onClick={() => {
+                setIsSideBarOpen(false);
                 setIsHomeClicked();
                 navigate('/');
               }}
