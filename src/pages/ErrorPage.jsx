@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom';
 
-import { Typography, Button, Grid } from '@mui/material';
+import { Typography, Button, Grid, Box } from '@mui/material';
+import { styled } from '@mui/system';
+
+const AnimatedBox = styled(Box)({
+  transition: 'transform 0.2s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.05)',
+  },
+});
 
 const ErrorPage = () => {
   return (
@@ -11,15 +19,28 @@ const ErrorPage = () => {
       alignItems='center'
       style={{ minHeight: '100vh', padding: '20px' }}
     >
-      <Grid item>
+      <AnimatedBox
+        component={Grid}
+        item
+        sx={{
+          textAlign: 'center',
+          mb: 4,
+        }}
+      >
         <Typography variant='h1' align='center' gutterBottom>
           Oops!
         </Typography>
         <Typography variant='h4' align='center' gutterBottom>
           An error occurred. The page you are looking for cannot be found.
         </Typography>
-      </Grid>
-      <Grid item>
+      </AnimatedBox>
+      <AnimatedBox
+        component={Grid}
+        item
+        sx={{
+          textAlign: 'center',
+        }}
+      >
         <Button
           variant='contained'
           component={Link}
@@ -28,7 +49,7 @@ const ErrorPage = () => {
         >
           Back to Home
         </Button>
-      </Grid>
+      </AnimatedBox>
     </Grid>
   );
 };
