@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import SideBar from './SideBar';
+import SideBar from './mapSideBar/SideBar';
 
 import { setMarkers } from '../../hooks/custom-hook/useMapMarkers';
 
@@ -16,8 +16,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 0,
-  lng: 0,
+  lat: 20,
+  lng: 50,
 };
 
 const GoogleMaps = () => {
@@ -52,7 +52,7 @@ const GoogleMaps = () => {
       <SideBar isOpen={isSideBarOpen} onClose={() => setIsSideBarOpen(false)} />
     </>
   ) : (
-    <>Something goes wrong!</>
+    <>Loading...</>
   );
 };
 

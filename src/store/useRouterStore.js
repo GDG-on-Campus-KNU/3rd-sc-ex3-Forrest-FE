@@ -2,24 +2,15 @@ import { create } from 'zustand';
 
 export const useRouterStore = create((set) => ({
   isHomeClicked: false,
-  isWar1Clicked: false,
-  isWar2Clicked: false,
+  isWarClicked: false,
   setIsHomeClicked: (clicked) =>
     set({
       isHomeClicked: !clicked,
-      isWar1Clicked: clicked,
-      isWar2Clicked: clicked,
+      isWarClicked: clicked,
     }),
-  setIsWar1Clicked: (clicked) =>
+  setIsWarClicked: (clicked) =>
     set({
       isHomeClicked: clicked,
-      isWar1Clicked: !clicked,
-      isWar2Clicked: clicked,
-    }),
-  setIsWar2Clicked: (clicked) =>
-    set({
-      isHomeClicked: clicked,
-      isWar1Clicked: clicked,
-      isWar2Clicked: !clicked,
+      isWarClicked: !clicked,
     }),
 }));

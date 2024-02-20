@@ -22,26 +22,14 @@ const ColoredIcon = styled(({ icon: Icon, isClicked, ...rest }) => (
 }));
 
 const MainNavigation = () => {
-  const {
-    isHomeClicked,
-    isWar1Clicked,
-    isWar2Clicked,
-    setIsHomeClicked,
-    setIsWar1Clicked,
-    setIsWar2Clicked,
-  } = useRouterStore();
+  const { isHomeClicked, isWarClicked, setIsHomeClicked, setIsWarClicked } =
+    useRouterStore();
   const { setIsSideBarOpen } = useMapStore();
   const navigate = useNavigate();
 
-  const handleWar1Click = () => {
+  const handleWarClick = () => {
     setIsSideBarOpen(false);
-    setIsWar1Clicked();
-    navigate('/map');
-  };
-
-  const handleWar2Click = () => {
-    setIsSideBarOpen(false);
-    setIsWar2Clicked();
+    setIsWarClicked();
     navigate('/map');
   };
 
@@ -73,21 +61,11 @@ const MainNavigation = () => {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={handleWar1Click}>
+            <ListItemButton onClick={handleWarClick}>
               <ListItemIcon>
                 <FlexWrapper>
-                  <ColoredIcon icon={ForestIcon} isClicked={isWar1Clicked} />
-                  <SideBarText>War1</SideBarText>
-                </FlexWrapper>
-              </ListItemIcon>
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton onClick={handleWar2Click}>
-              <ListItemIcon>
-                <FlexWrapper>
-                  <ColoredIcon icon={ForestIcon} isClicked={isWar2Clicked} />
-                  <SideBarText>War2</SideBarText>
+                  <ColoredIcon icon={ForestIcon} isClicked={isWarClicked} />
+                  <SideBarText>War</SideBarText>
                 </FlexWrapper>
               </ListItemIcon>
             </ListItemButton>
