@@ -7,6 +7,7 @@ const SideBarContent = () => {
       sx={{
         width: '100%',
         height: '100%',
+        overflow: 'auto',
       }}
       role='presentation'
     >
@@ -18,6 +19,9 @@ const SideBarContent = () => {
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
+          '@media (max-width: 32rem)': {
+            height: '16rem',
+          },
         }}
       >
         <Box
@@ -32,10 +36,10 @@ const SideBarContent = () => {
           <Skeleton
             sx={{
               marginBottom: '1rem',
+              width: { xs: 120, sm: 180, md: 200 },
+              height: { xs: 120, sm: 180, md: 200 },
             }}
             variant='rounded'
-            width={201}
-            height={202}
           />
           <Typography variant='var(--fontSizeXs)'>BEFORE</Typography>
         </Box>
@@ -51,10 +55,10 @@ const SideBarContent = () => {
           <Skeleton
             sx={{
               marginBottom: '1rem',
+              width: { xs: 120, sm: 180, md: 200 },
+              height: { xs: 120, sm: 180, md: 200 },
             }}
             variant='rounded'
-            width={201}
-            height={202}
           />
           <Typography variant='var(--fontSizeXs)'>AFTER</Typography>
         </Box>
