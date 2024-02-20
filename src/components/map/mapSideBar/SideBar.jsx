@@ -8,10 +8,10 @@ const SideBar = ({ isOpen, onClose }) => {
       sx={{
         position: 'fixed',
         top: 0,
-        left: isOpen ? 60 : '-40vw',
-        width: '40',
-        height: '100%',
-        backgroundColor: 'white',
+        left: isOpen ? 60 : '-32rem',
+        width: '32rem',
+        height: '100vh',
+        backgroundColor: 'background.paper',
         boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 2px 0px',
         transition: 'left 0.5s ease',
       }}
