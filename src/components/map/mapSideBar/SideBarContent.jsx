@@ -1,3 +1,4 @@
+import ContentTabs from '../mapSideBarTab/ContentTabs';
 import { Box, Skeleton, Typography } from '@mui/material';
 
 const SideBarContent = () => {
@@ -58,6 +59,7 @@ const SideBarContent = () => {
           <Typography variant='var(--fontSizeXs)'>AFTER</Typography>
         </Box>
       </Box>
+      <ContentTabs />
     </Box>
   );
 };
