@@ -14,11 +14,11 @@ const SideBar = ({ isOpen, onClose }) => {
         backgroundColor: 'background.paper',
         boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 2px 0px',
         transition: 'left 0.5s ease',
-        '@media (max-width: 32rem)': {
+        '@media (maxWidth: 32rem)': {
           width: 'calc(100% - 60px)',
           right: isOpen ? 60 : 'calc(100% - 60px)',
         },
-        '@media (max-with: 280px)': {
+        '@media (maxWith: 280px)': {
           width: 'calc(100% - 60px)',
           right: isOpen ? 0 : '100%',
         },
@@ -33,7 +33,7 @@ const SideBar = ({ isOpen, onClose }) => {
           right: 10,
           cursor: 'pointer',
           color: 'black',
-          '@media (max-width: 32rem)': {
+          '@media (maxWidth: 32rem)': {
             top: 5,
             right: 5,
           },

@@ -41,7 +41,7 @@ const SideBarContent = () => {
             }}
             variant='rounded'
           />
-          <Typography variant='var(--fontSizeXs)'>BEFORE</Typography>
+          <Typography variant='subtitle2'>BEFORE</Typography>
         </Box>
         <Box
           sx={{
@@ -60,7 +60,7 @@ const SideBarContent = () => {
             }}
             variant='rounded'
           />
-          <Typography variant='var(--fontSizeXs)'>AFTER</Typography>
+          <Typography variant='subtitle2'>AFTER</Typography>
         </Box>
       </Box>
       <ContentTabs />

@@ -30,6 +30,10 @@ const theme = createTheme({
       dark: '#263238',
       contrastText: '#fff',
     },
+    third: {
+      light: '#4caf50',
+      main: '#2e7d32',
+    },
   },
 });
 
